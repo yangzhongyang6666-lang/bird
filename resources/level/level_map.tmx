@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.8" tiledversion="1.8.6" orientation="orthogonal" renderorder="right-down" width="25" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="13">
+ <imagelayer id="3" name="背景">
+  <image source="../images/level/level_map.png" width="658" height="370"/>
+ </imagelayer>
+ <objectgroup id="4" name="关卡">
+  <object id="1" name="level_1" x="101.709" y="391.136" width="32.7653" height="29.3523"/>
+  <object id="3" name="level_2" x="48.4654" y="264.853" width="29.3523" height="31.4001"/>
+  <object id="5" name="level_3" x="260.757" y="352.227" width="29.3523" height="26.6218"/>
+  <object id="6" name="level_4" x="410.932" y="318.779" width="27.987" height="24.574"/>
+  <object id="7" name="level_5" x="232.088" y="168.605" width="30.7175" height="25.9392"/>
+  <object id="8" name="level_7" x="356.323" y="63.4828" width="29.3523" height="28.6696"/>
+  <object id="9" name="level_8" x="568.615" y="83.9611" width="28.6696" height="30.0349"/>
+  <object id="10" name="level_9" x="613.667" y="279.188" width="32.7653" height="32.0827"/>
+  <object id="11" name="level_10" x="690.802" y="347.449" width="32.0827" height="32.7653"/>
+  <object id="12" name="level_11" x="770.667" y="208.196" width="27.3044" height="29.3523"/>
+ </objectgroup>
+</map>

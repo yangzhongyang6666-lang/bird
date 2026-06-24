@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.8" tiledversion="1.8.6" orientation="orthogonal" renderorder="right-down" width="66" height="37" tilewidth="10" tileheight="10" infinite="0" nextlayerid="6" nextobjectid="34">
+ <imagelayer id="2" name="图像图层 1">
+  <image source="../images/level/level_map.png" width="658" height="370"/>
+  <properties>
+   <property name="image_name" value="level_map.png"/>
+  </properties>
+ </imagelayer>
+ <objectgroup id="3" name="level">
+  <object id="1" name="level-1" x="47.4771" y="195.695" width="12.1731" height="9.56459"/>
+  <object id="2" name="level-2" x="185.959" y="236.605"/>
+  <object id="3" name="level-3" x="341.04" y="256.604"/>
+  <object id="4" name="level-4" x="202.956" y="123.89"/>
+  <object id="5" name="level-5" x="372.151" y="68.7867"/>
+  <object id="6" name="level-6" x="570.092" y="73.6079"/>
+  <object id="7" name="level-7" x="456.836" y="304.381"/>
+  <object id="8" name="level-8" x="600.145" y="217.745"/>
+ </objectgroup>
+</map>

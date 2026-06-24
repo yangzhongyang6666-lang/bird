@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.8" tiledversion="1.8.6" orientation="orthogonal" renderorder="right-down" width="66" height="37" tilewidth="10" tileheight="10" infinite="0" nextlayerid="6" nextobjectid="34">
+ <tileset firstgid="1" name="wood3" tilewidth="10" tileheight="10" tilecount="1480" columns="40">
+  <image source="wood3.png" width="400" height="374"/>
+ </tileset>
+ <objectgroup id="5" name="对象层 1">
+  <object id="15" name="board" type="board" x="0.00329792" y="319.414" width="659.962" height="9.418"/>
+  <object id="16" name="redBird" type="bird" x="50.2648" y="290.656">
+   <point/>
+  </object>
+  <object id="17" name="pig" type="pig" x="349.303" y="314.493">
+   <point/>
+  </object>
+  <object id="18" name="redBird" type="bird" x="85.2519" y="289.35">
+   <point/>
+  </object>
+  <object id="19" name="redBird" type="bird" x="20.9997" y="289.279">
+   <point/>
+  </object>
+  <object id="23" name="boxWood" type="material" x="415.559" y="188.249" width="42" height="42"/>
+  <object id="24" name="boxWood" type="material" x="415.124" y="232.159" width="42" height="42"/>
+  <object id="25" name="boxWood" type="material" x="415.559" y="275.87" width="42" height="42"/>
+  <object id="26" name="boxWood" type="material" x="519.124" y="276.069" width="42" height="42"/>
+  <object id="27" name="boxWood" type="material" x="519.559" y="232.159" width="42" height="42"/>
+  <object id="28" name="boxWood" type="material" x="519.994" y="188.249" width="42" height="42"/>
+  <object id="29" name="boxWood" type="material" x="519.559" y="144.339" width="42" height="42"/>
+  <object id="30" name="mediumWood" type="material" x="389.539" y="177.815" width="103.037" height="9.12983"/>
+  <object id="31" name="mediumWood" type="material" x="501.706" y="131.731" width="85.6465" height="10.8688"/>
+  <object id="32" type="sling" x="163.903" y="314.762">
+   <point/>
+  </object>
+ </objectgroup>
+</map>

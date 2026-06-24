@@ -19,8 +19,10 @@ class ResourceManager:
             self.images['welcome_bg'] = pygame.Surface((658, 370))
             self.images['welcome_bg'].fill((135, 206, 235))
             
-        # 2. 加载小鸟数据与切图
+        # 2. 依次命令管家去干活
         self._load_birds()
+        self._load_slings()
+        self._load_levels()
         print("====== 全局资源加载完毕 ======")
 
     def _load_birds(self):
@@ -31,30 +33,59 @@ class ResourceManager:
             print("⚠️ 警告：找不到小鸟精灵图")
             return
 
-        # 切割红鸟动画帧 (使用我们之前算好的安全坐标)
         red_bird_images = []
         x, y, w, h = 90, 15, 36, 35
         for i in range(5):
-            # 安全检查：防止切出界
             if x + w <= bird_sheet.get_width() and y + h <= bird_sheet.get_height():
                 red_bird_images.append(bird_sheet.subsurface((x, y, w, h)))
             x += w
         
-        # 如果切图失败保底
         if not red_bird_images:
             red_bird_images.append(bird_sheet)
 
-        # 核心：把红鸟的【物理属性】和【动画图片】打包存进字典
         self.birds_info['redBird'] = {
             'name': 'redBird',
             'shape_name': 'circle',
-            'radius': 17,       # 碰撞半径
-            'mass': 40,         # 质量
-            'elasticity': 0.95, # 弹性 (反弹系数)
-            'friction': 1.0,    # 摩擦力
-            'collision_type': 0,# 碰撞类别标号：0代表小鸟
+            'radius': 17,       
+            'mass': 40,         
+            'elasticity': 0.95, 
+            'friction': 1.0,    
+            'collision_type': 1,
             'images': red_bird_images
         }
+
+    def _load_slings(self):
+        """内部方法：切割并加载弹弓的左右两半"""
+        try:
+            sling_image = pygame.image.load("./resources/sling1.png").convert_alpha()
+            left = sling_image.subsurface((13, 1, 49, 135))
+            right = sling_image.subsurface((97, 1, 44, 210))
+            
+            self.images['sling_left'] = pygame.transform.scale(left, (24, 67))
+            self.images['sling_right'] = pygame.transform.scale(right, (22, 105))
+        except FileNotFoundError:
+            print("⚠️ 警告：找不到弹弓图片 sling1.png")
+            self.images['sling_left'] = None
+            self.images['sling_right'] = None
+
+    def _load_levels(self):
+        """内部方法：用循环自动切割全部 12 个选关图标"""
+        try:
+            num_image = pygame.image.load("./resources/number.png").convert_alpha()
+            
+            # 自动计算：原图被均分为了 4行 3列
+            cell_w = num_image.get_width() // 3
+            cell_h = num_image.get_height() // 4
+            
+            level_num = 1
+            for row in range(4):
+                for col in range(3):
+                    icon = num_image.subsurface((col * cell_w, row * cell_h, cell_w, cell_h))
+                    self.images[f'level_{level_num}_icon'] = pygame.transform.smoothscale(icon, (60, 60))
+                    level_num += 1
+                    
+        except FileNotFoundError:
+            print("⚠️ 警告：找不到选关图片 number.png")
 
     def get_bird_info(self, name):
         """对外接口：别的类需要小鸟数据时，直接调用这个方法拿"""
